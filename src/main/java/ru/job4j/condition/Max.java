@@ -2,23 +2,19 @@ package ru.job4j.condition;
 
 public class Max {
     public static int max(int left, int right) {
-        int result = left > right ? left : right;
-        return result;
+        return left > right ? left : right;
     }
 
     public static String maxLeftNumber(int left, int right) {
-        String result = left > right ? "Первое максимальное" : "Второе максимальное";
-        return result;
+        return left > right ? "Первое максимальное" : "Второе максимальное";
     }
 
     public static String maxRightNumber(int left, int right) {
-        String result = left < right ? "Второе максимальное" : "Первое максимальное";
-        return result;
+        return left < right ? "Второе максимальное" : "Первое максимальное";
     }
 
     public static String equalNumbers(int left, int right) {
-        String result = left == right ? "Оба одинаковые" : "";
-        return result;
+        return left == right ? "Оба одинаковые" : "";
     }
 
     public static void main(String[] args) {
