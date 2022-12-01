@@ -13,12 +13,4 @@ public class Turn {
         }
         return array;
     }
-
-    public static void main(String[] args) {
-        int[] input = new int[]{4, 1, 6, 2};
-        int[] rsl = back(input);
-        for (int index = 0; index < rsl.length; index++) {
-            System.out.println(rsl[index]);
-        }
-    }
 }
