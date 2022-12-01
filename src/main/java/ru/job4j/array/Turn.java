@@ -1,0 +1,24 @@
+package ru.job4j.array;
+
+public class Turn {
+    public static int[] back(int[] array) {
+        for (int index = 0; index < array.length; index++) {
+            int temp = array[0];
+            array[0] = array[array.length - 1];
+            array[array.length - 1] = temp;
+            temp = array[1];
+            array[1] = array[array.length - 2];
+            array[array.length - 2] = temp;
+            break;
+        }
+        return array;
+    }
+
+    public static void main(String[] args) {
+        int[] input = new int[]{4, 1, 6, 2};
+        int[] rsl = back(input);
+        for (int index = 0; index < rsl.length; index++) {
+            System.out.println(rsl[index]);
+        }
+    }
+}
