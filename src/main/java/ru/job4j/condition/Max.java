@@ -5,6 +5,17 @@ public class Max {
         return left > right ? left : right;
     }
 
+    public static int max(int first, int second, int third) {
+        int number = max(second, third);
+        return max(first, number);
+    }
+
+    public static int max(int first, int second, int third, int fourth) {
+        int number1 = max(third, fourth);
+        int number2 = max(first, second);
+        return max(number1, number2);
+    }
+
     public static String maxLeftNumber(int left, int right) {
         return left > right ? "Первое максимальное" : "Второе максимальное";
     }
