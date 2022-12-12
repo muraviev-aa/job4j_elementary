@@ -3,8 +3,6 @@ package ru.job4j.condition;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class PointTest {
 
     @Test
@@ -40,6 +38,26 @@ public class PointTest {
         Point a = new Point(0, 0);
         Point b = new Point(6, 5);
         double out = a.distance(b);
+        Assert.assertEquals(expected, out, 0.01);
+
+    }
+
+    @Test
+    public void when000to555then8and66() {
+        double expected = 8.66;
+        Point a = new Point(0, 0, 0);
+        Point b = new Point(5, 5, 5);
+        double out = a.distance3D(b);
+        Assert.assertEquals(expected, out, 0.01);
+
+    }
+
+    @Test
+    public void when101to585then9and79() {
+        double expected = 9.79;
+        Point a = new Point(1, 0, 1);
+        Point b = new Point(5, 8, 5);
+        double out = a.distance3D(b);
         Assert.assertEquals(expected, out, 0.01);
 
     }
