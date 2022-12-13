@@ -6,14 +6,11 @@ public class Max {
     }
 
     public static int max(int first, int second, int third) {
-        int number = max(second, third);
-        return max(first, number);
+        return max(first, max(second, third));
     }
 
     public static int max(int first, int second, int third, int fourth) {
-        int number1 = max(third, fourth);
-        int number2 = max(first, second);
-        return max(number1, number2);
+        return max(max(third, fourth), max(first, second));
     }
 
     public static String maxLeftNumber(int left, int right) {
