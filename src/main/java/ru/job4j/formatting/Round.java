@@ -17,11 +17,11 @@ public class Round {
     public static void main(String[] args) {
         double a = 3.999999;
         /** Округление до числа с плавающей точкой до ближайшего
-         * целого с помощью метода round(a) */
+         * целого с помощью метода round() */
         System.out.println(round(a));
 
         int b = (int) a;
-        /** Округление без использования метода round(a) */
+        /** Округление без использования метода round() */
         System.out.println(b);
 
         double c = 3.55;
