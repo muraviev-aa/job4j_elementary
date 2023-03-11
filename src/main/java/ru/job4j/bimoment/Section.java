@@ -43,5 +43,5 @@ public interface Section {
      * расчетная схема №1
      */
 
-    double calcBimomentMax1(double p, double e, double k);
+    double calcBimomentMax1(double p, double e, double k, double l);
 }

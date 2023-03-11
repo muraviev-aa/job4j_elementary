@@ -84,9 +84,10 @@ public class UbeamTest {
         double p = 2100;
         double e = 8;
         double k = 0.01008511;
+        double l = 600;
         double expected = 828996.8;
         Ubeam ubeam = new Ubeam();
-        double out = ubeam.calcBimomentMax1(p, e, k);
+        double out = ubeam.calcBimomentMax1(p, e, k, l);
         Assert.assertEquals(expected, out, 0.1);
     }
 }

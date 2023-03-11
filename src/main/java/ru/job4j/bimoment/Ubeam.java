@@ -4,31 +4,31 @@ public class Ubeam implements Section {
     /**
      * Толщина полки [см]
      */
-    private double tf = 1.05;
+    private double tf;
     /**
      * Ширина полки [см]
      */
-    private double b = 9.5;
+    private double b;
     /**
      * Толщина стенки [см]
      */
-    private double tw = 0.6;
+    private double tw;
     /**
      * Высота сечения [см]
      */
-    private int h = 27;
+    private int h;
     /**
      * Сосредоточенная сила [кг]
      */
-    private double p = 2100;
+    private double p;
     /**
      * Эксцентриситет [см]
      */
-    private double e = 8;
+    private double e;
     /**
      * Пролет балки [см]
      */
-    private double l = 600;
+    private double l;
     /**
      * Координата центра изгиба [см]
      */
@@ -117,7 +117,7 @@ public class Ubeam implements Section {
     }
 
     @Override
-    public double calcBimomentMax1(double p, double e, double k) {
+    public double calcBimomentMax1(double p, double e, double k, double l) {
         bmax = ((p * e) / (2 * k)) * (Math.sinh(0.5 * k * l) / Math.cosh(0.5 * k * l));
         return roundOne(bmax);
     }
@@ -131,6 +131,6 @@ public class Ubeam implements Section {
                 + ubeam.calcSectorialMomentInertia(0.6, 27, 1.05, 40.62, 9.5, 78.76));
         System.out.println("It " + ubeam.calcMomentInertiaTorsion(9.5, 1.05, 27, 0.6));
         System.out.println("k " + ubeam.calcBendingTorsionalCharacteristic(10.22, 38534.48));
-        System.out.println("Bmax " + ubeam.calcBimomentMax1(2100, 8, 0.01008511));
+        System.out.println("Bmax " + ubeam.calcBimomentMax1(2100, 8, 0.01008511, 600));
     }
 }
