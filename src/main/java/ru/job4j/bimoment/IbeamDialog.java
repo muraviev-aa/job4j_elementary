@@ -30,13 +30,13 @@ public class IbeamDialog implements SectionI {
      */
     private double l;
     /**
-     * Секториальный момент инерции [см6]
-     */
-    private double iw;
-    /**
      * Главная секториальная координата w1 [см2]
      */
     private double w1;
+    /**
+     * Секториальный момент инерции [см6]
+     */
+    private double iw;
     /**
      * Момент инерции при чистом кручении [см4]
      */
@@ -49,6 +49,20 @@ public class IbeamDialog implements SectionI {
      * Максимальный бимомент [кг/см2]
      */
     private double bmax;
+
+    /**
+     * Вычисление секториального момента инерции Iw [см6]
+     */
+    public double calcSectorialMomentInertia(double tf, double b, double h) {
+        return roundTwo((tf * Math.pow(b, 3) * Math.pow((h - tf), 2)) / 24);
+    }
+
+    /**
+     * Вычисление момента инерции при кручении It [см4]
+     */
+    public double calcMomentInertiaTorsion(double b, double tf, double h, double tw) {
+        return roundTwo((1.29 / 3) * (2 * b * Math.pow(tf, 3) + (h - 2 * tf) * Math.pow(tw, 3)));
+    }
 
     public static void main(String[] args) {
         IbeamDialog iBeam = new IbeamDialog();
