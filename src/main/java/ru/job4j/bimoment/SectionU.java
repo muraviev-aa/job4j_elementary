@@ -1,6 +1,6 @@
 package ru.job4j.bimoment;
 
-public interface Section {
+public interface SectionU {
     /**
      * Модуль сдвига [кг/см2]
      */
@@ -38,10 +38,28 @@ public interface Section {
      * Вычисление изгибно-крутильной характеристики k [1/см]
      */
     double calcBendingTorsionalCharacteristic(double it, double iw);
+    
     /**
      * Вычисление максимального бимомента Bmax [кг/см2]
      * расчетная схема №1
      */
-
     double calcBimomentMax1(double p, double e, double k, double l);
+
+    /**
+     * Округление промежуточных значений вычислений
+     */
+    default double roundOne(double d) {
+        double scale = Math.pow(10, 1);
+        return Math.ceil(d * scale) / scale;
+    }
+
+    default double roundTwo(double d) {
+        double scale = Math.pow(10, 2);
+        return Math.ceil(d * scale) / scale;
+    }
+
+    default double roundEight(double d) {
+        double scale = Math.pow(10, 8);
+        return Math.ceil(d * scale) / scale;
+    }
 }

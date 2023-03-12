@@ -1,6 +1,6 @@
 package ru.job4j.bimoment;
 
-public class Ubeam implements Section {
+public class UbeamDialog implements SectionU {
     /**
      * Толщина полки [см]
      */
@@ -58,24 +58,6 @@ public class Ubeam implements Section {
      */
     private double bmax;
 
-    /**
-     * Округление промежуточных значений вычислений
-     */
-    double roundOne(double d) {
-        double scale = Math.pow(10, 1);
-        return Math.ceil(d * scale) / scale;
-    }
-
-    static double roundTwo(double d) {
-        double scale = Math.pow(10, 2);
-        return Math.ceil(d * scale) / scale;
-    }
-
-    double roundEight(double d) {
-        double scale = Math.pow(10, 8);
-        return Math.ceil(d * scale) / scale;
-    }
-
     @Override
     public double calcBendCenter(double b, double tw, int h, double tf) {
         ax = 3 * Math.pow((b - 0.5 * tw), 2) / ((h - tf)
@@ -123,14 +105,14 @@ public class Ubeam implements Section {
     }
 
     public static void main(String[] args) {
-        Ubeam ubeam = new Ubeam();
-        System.out.println("ax " + ubeam.calcBendCenter(9.5, 0.6, 27, 1.05));
-        System.out.println("w1 " + ubeam.calcSectorialCoordinateW1(3.13, 27, 1.05));
-        System.out.println("w2 " + ubeam.calcSectorialCoordinateW2(9.5, 0.6, 3.13, 27, 1.05));
+        UbeamDialog uBeam = new UbeamDialog();
+        System.out.println("ax " + uBeam.calcBendCenter(9.5, 0.6, 27, 1.05));
+        System.out.println("w1 " + uBeam.calcSectorialCoordinateW1(3.13, 27, 1.05));
+        System.out.println("w2 " + uBeam.calcSectorialCoordinateW2(9.5, 0.6, 3.13, 27, 1.05));
         System.out.println("Iw "
-                + ubeam.calcSectorialMomentInertia(0.6, 27, 1.05, 40.62, 9.5, 78.76));
-        System.out.println("It " + ubeam.calcMomentInertiaTorsion(9.5, 1.05, 27, 0.6));
-        System.out.println("k " + ubeam.calcBendingTorsionalCharacteristic(10.22, 38534.48));
-        System.out.println("Bmax " + ubeam.calcBimomentMax1(2100, 8, 0.01008511, 600));
+                + uBeam.calcSectorialMomentInertia(0.6, 27, 1.05, 40.62, 9.5, 78.76));
+        System.out.println("It " + uBeam.calcMomentInertiaTorsion(9.5, 1.05, 27, 0.6));
+        System.out.println("k " + uBeam.calcBendingTorsionalCharacteristic(10.22, 38534.48));
+        System.out.println("Bmax " + uBeam.calcBimomentMax1(2100, 8, 0.01008511, 600));
     }
 }

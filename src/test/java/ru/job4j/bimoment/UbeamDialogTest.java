@@ -3,9 +3,7 @@ package ru.job4j.bimoment;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
-public class UbeamTest {
+public class UbeamDialogTest {
 
     @Test
     public void when27PThen3Point13() {
@@ -14,8 +12,8 @@ public class UbeamTest {
         double tf = 1.05;
         int h = 27;
         double expected = 3.13;
-        Ubeam ubeam = new Ubeam();
-        double out = ubeam.calcBendCenter(b, tw, h, tf);
+        UbeamDialog uBeam = new UbeamDialog();
+        double out = uBeam.calcBendCenter(b, tw, h, tf);
         Assert.assertEquals(expected, out, 0.01);
     }
 
@@ -25,8 +23,8 @@ public class UbeamTest {
         int h = 27;
         double tf = 1.05;
         double expected = 40.62;
-        Ubeam ubeam = new Ubeam();
-        double out = ubeam.calcSectorialCoordinateW1(ax, h, tf);
+        UbeamDialog uBeam = new UbeamDialog();
+        double out = uBeam.calcSectorialCoordinateW1(ax, h, tf);
         Assert.assertEquals(expected, out, 0.01);
     }
 
@@ -38,8 +36,8 @@ public class UbeamTest {
         int h = 27;
         double tf = 1.05;
         double expected = 78.76;
-        Ubeam ubeam = new Ubeam();
-        double out = ubeam.calcSectorialCoordinateW2(b, tw, ax, h, tf);
+        UbeamDialog uBeam = new UbeamDialog();
+        double out = uBeam.calcSectorialCoordinateW2(b, tw, ax, h, tf);
         Assert.assertEquals(expected, out, 0.01);
     }
 
@@ -52,8 +50,8 @@ public class UbeamTest {
         double w1 = 40.62;
         double w2 = 78.76;
         double expected = 38534.48;
-        Ubeam ubeam = new Ubeam();
-        double out = ubeam.calcSectorialMomentInertia(tw, h, tf, w1, b, w2);
+        UbeamDialog uBeam = new UbeamDialog();
+        double out = uBeam.calcSectorialMomentInertia(tw, h, tf, w1, b, w2);
         Assert.assertEquals(expected, out, 0.01);
     }
 
@@ -64,8 +62,8 @@ public class UbeamTest {
         int h = 27;
         double tw = 0.6;
         double expected = 10.22;
-        Ubeam ubeam = new Ubeam();
-        double out = ubeam.calcMomentInertiaTorsion(b, tf, h, tw);
+        UbeamDialog uBeam = new UbeamDialog();
+        double out = uBeam.calcMomentInertiaTorsion(b, tf, h, tw);
         Assert.assertEquals(expected, out, 0.01);
     }
 
@@ -74,8 +72,8 @@ public class UbeamTest {
         double it = 10.22;
         double iw = 38534.48;
         double expected = 0.01008511;
-        Ubeam ubeam = new Ubeam();
-        double out = ubeam.calcBendingTorsionalCharacteristic(it, iw);
+        UbeamDialog uBeam = new UbeamDialog();
+        double out = uBeam.calcBendingTorsionalCharacteristic(it, iw);
         Assert.assertEquals(expected, out, 0.00000001);
     }
 
@@ -86,8 +84,8 @@ public class UbeamTest {
         double k = 0.01008511;
         double l = 600;
         double expected = 828996.8;
-        Ubeam ubeam = new Ubeam();
-        double out = ubeam.calcBimomentMax1(p, e, k, l);
+        UbeamDialog uBeam = new UbeamDialog();
+        double out = uBeam.calcBimomentMax1(p, e, k, l);
         Assert.assertEquals(expected, out, 0.1);
     }
 }
