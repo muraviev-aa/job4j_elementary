@@ -72,5 +72,4 @@ public class IbeamDialog implements SectionI {
         System.out.println("k: " + iBeam.calcBendingTorsionalCharacteristic(28.82, 287466.67));
         System.out.println("Bmax: " + iBeam.calcBimomentMax1(2100, 8, 0.0062006, 600));
     }
-
 }
