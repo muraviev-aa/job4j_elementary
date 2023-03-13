@@ -74,7 +74,7 @@ public class BeamDialogIwa implements Bimoment, SectionI {
      * Вычисление координаты центра изгиба ay [см]
      * по оси OY от середины верхней полки
      */
-    public double calcBendCenter(double b, double h, double tf1, double tf2, double d) {
+    double calcBendCenter(double b, double h, double tf1, double tf2, double d) {
         return roundTwo((tf2 * Math.pow(d, 3) * (h - 0.5 * (tf1 + tf2)))
                 / (tf1 * Math.pow(b, 3) + tf2 * Math.pow(d, 3)));
     }
@@ -97,7 +97,7 @@ public class BeamDialogIwa implements Bimoment, SectionI {
     /**
      * Вычисление секториального момента инерции Iw [см6]
      */
-    public double calcSectorialMomentInertia(double tf1, double tf2, double b, double d, double h) {
+    double calcSectorialMomentInertia(double tf1, double tf2, double b, double d, double h) {
         return roundTwo((tf1 * Math.pow(b, 3) * tf2 * Math.pow(d, 3)
                 * Math.pow((h - 0.5 * (tf1 + tf2)), 2))
                 / (12 * (tf1 * Math.pow(b, 3) + tf2 * Math.pow(d, 3))));
@@ -106,7 +106,7 @@ public class BeamDialogIwa implements Bimoment, SectionI {
     /**
      * Вычисление момента инерции при кручении It [см4]
      */
-    public double calcMomentInertiaTorsion(double b, double tf1, double d, double tf2, double h, double tw) {
+    double calcMomentInertiaTorsion(double b, double tf1, double d, double tf2, double h, double tw) {
         return roundTwo((1.25 / 3) * (b * Math.pow(tf1, 3) + d * Math.pow(tf2, 3)
                 + ((h - tf1 - tf2) * Math.pow(tw, 3))));
     }

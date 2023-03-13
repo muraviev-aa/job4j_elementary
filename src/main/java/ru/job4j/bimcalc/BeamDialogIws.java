@@ -62,14 +62,14 @@ public class BeamDialogIws implements Bimoment, SectionI {
     /**
      * Вычисление секториального момента инерции Iw [см6]
      */
-    public double calcSectorialMomentInertia(double tf, double b, double h) {
+    double calcSectorialMomentInertia(double tf, double b, double h) {
         return roundTwo((tf * Math.pow(b, 3) * Math.pow((h - tf), 2)) / 24);
     }
 
     /**
      * Вычисление момента инерции при кручении It [см4]
      */
-    public double calcMomentInertiaTorsion(double b, double tf, double h, double tw) {
+    double calcMomentInertiaTorsion(double b, double tf, double h, double tw) {
         return roundTwo((1.29 / 3) * (2 * b * Math.pow(tf, 3) + (h - 2 * tf) * Math.pow(tw, 3)));
     }
 
