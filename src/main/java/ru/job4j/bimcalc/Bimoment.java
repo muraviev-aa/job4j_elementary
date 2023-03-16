@@ -13,6 +13,12 @@ public interface Bimoment {
     /**
      * Округление промежуточных значений вычислений
      */
+
+    default double roundWhole(double d) {
+        double scale = Math.pow(10, 0);
+        return Math.ceil(d * scale) / scale;
+    }
+
     default double roundOne(double d) {
         double scale = Math.pow(10, 1);
         return Math.ceil(d * scale) / scale;

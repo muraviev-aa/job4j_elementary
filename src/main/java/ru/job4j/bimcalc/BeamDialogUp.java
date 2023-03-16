@@ -53,13 +53,25 @@ public class BeamDialogUp implements SectionU, Bimoment {
      */
     private double it;
     /**
+     * Момент инерции сечения относительно оси Х [см4]
+     */
+    double ix;
+    /**
+     * Момент сопротивления сечения относительно оси Х [см3]
+     */
+    double wx;
+    /**
      * Упругая изгибно-крутильная характеристика [1/см]
      */
     private double k;
     /**
-     * Максимальный бимомент [кг/см2]
+     * Максимальный бимомент [кг*см2]
      */
     private double bmax;
+    /**
+     * Максимальный момент [кг*см]
+     */
+    private double mmax;
 
     /**
      * Вычисление координаты центра изгиба ax [см]
@@ -126,5 +138,17 @@ public class BeamDialogUp implements SectionU, Bimoment {
                 + beamDialogUp.calcBimomentMax1Displaced(2100, 8, 0.01008527, 600, 200));
         System.out.println("Mmax1: " + beamDialogUp.calcMomentMax1(2100, 600));
         System.out.println("Mmax1Displaced: " + beamDialogUp.calcMomentMax1Displaced(2100, 600, 200));
+        System.out.println("SigmaBimomentPoint1:"
+                + beamDialogUp.normalStressBimomentPoint1(828996.8, 40.62, 38534.48));
+        System.out.println("SigmaBimomentPoint2:"
+                + beamDialogUp.normalStressBimomentPoint2(828996.8, 78.76, 38534.48));
+        System.out.println("SigmaBimomentPoint3:"
+                + beamDialogUp.normalStressBimomentPoint3(828996.8, 40.62, 38534.48));
+        System.out.println("SigmaBimomentPoint4:"
+                + beamDialogUp.normalStressBimomentPoint4(828996.8, 78.76, 38534.48));
+        System.out.println("SigmaMomentPoint1And2:"
+                + beamDialogUp.normalStressMomentPoint1And2(315000, 310));
+        System.out.println("SigmaMomentPoint3And4:"
+                + beamDialogUp.normalStressMomentPoint3And4(315000, 310));
     }
 }

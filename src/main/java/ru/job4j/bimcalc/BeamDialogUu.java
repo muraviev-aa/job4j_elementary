@@ -57,11 +57,15 @@ public class BeamDialogUu implements SectionU, Bimoment {
      */
     double ix;
     /**
+     * Момент сопротивления сечения относительно оси Х [см3]
+     */
+    double wx;
+    /**
      * Упругая изгибно-крутильная характеристика [1/см]
      */
     private double k;
     /**
-     * Максимальный бимомент [кг/см2]
+     * Максимальный бимомент [кг*см2]
      */
     private double bmax;
 
