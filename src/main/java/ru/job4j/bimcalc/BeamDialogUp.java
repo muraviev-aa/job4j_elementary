@@ -124,5 +124,7 @@ public class BeamDialogUp implements SectionU, Bimoment {
         System.out.println("Bmax1: " + beamDialogUp.calcBimomentMax1(2100, 8, 0.01008527, 600));
         System.out.println("Bmax1Displaced: "
                 + beamDialogUp.calcBimomentMax1Displaced(2100, 8, 0.01008527, 600, 200));
+        System.out.println("Mmax1: " + beamDialogUp.calcMomentMax1(2100, 600));
+        System.out.println("Mmax1Displaced: " + beamDialogUp.calcMomentMax1Displaced(2100, 600, 200));
     }
 }

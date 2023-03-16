@@ -42,4 +42,12 @@ public interface Bimoment {
     default double calcBimomentMax1Displaced(double p, double e, double k, double l, double a) {
         return roundOne(((p * e) / k) * ((Math.sinh(k * a) * Math.sinh(k * (l - a))) / Math.sinh(k * l)));
     }
+
+    default double calcMomentMax1(double p, double l) {
+        return roundOne(0.25 * p * l);
+    }
+
+    default double calcMomentMax1Displaced(double p, double l, double a) {
+        return roundOne((p * a * (l - a)) / l);
+    }
 }
