@@ -121,6 +121,8 @@ public class BeamDialogUp implements SectionU, Bimoment {
                 + beamDialogUp.calcMomentInertiaTorsion(9.5, 1.05, 27, 0.6));
         System.out.println("k: "
                 + beamDialogUp.calcBendingTorsionalCharacteristic(10.22, 38533.26));
-        System.out.println("Bmax: " + beamDialogUp.calcBimomentMax1(2100, 8, 0.01008527, 600));
+        System.out.println("Bmax1: " + beamDialogUp.calcBimomentMax1(2100, 8, 0.01008527, 600));
+        System.out.println("Bmax1Displaced: "
+                + beamDialogUp.calcBimomentMax1Displaced(2100, 8, 0.01008527, 600, 200));
     }
 }
