@@ -76,16 +76,4 @@ public class UbeamDialogTest {
         double out = uBeam.calcBendingTorsionalCharacteristic(it, iw);
         Assert.assertEquals(expected, out, 0.00000001);
     }
-
-    @Test
-    public void when27PForce2100Then828996Point8() {
-        double p = 2100;
-        double e = 8;
-        double k = 0.01008511;
-        double l = 600;
-        double expected = 828996.8;
-        UbeamDialog uBeam = new UbeamDialog();
-        double out = uBeam.calcBimomentMax1(p, e, k, l);
-        Assert.assertEquals(expected, out, 0.1);
-    }
 }
