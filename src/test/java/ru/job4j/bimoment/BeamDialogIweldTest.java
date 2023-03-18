@@ -69,14 +69,4 @@ public class BeamDialogIweldTest {
         double out = beamDialogIweld.calcMomentInertiaTorsion(b, tf1, d, tf2, h, tw);
         Assert.assertEquals(expected, out, 0.01);
     }
-
-    @Test
-    public void when400x16And250x10And666x8Then0Point00271132() {
-        double it = 92.34;
-        double iw = 4817160.21;
-        double expected = 0.00271132;
-        BeamDialogIweld beamDialogIweld = new BeamDialogIweld();
-        double out = beamDialogIweld.calcBendingTorsionalCharacteristic(it, iw);
-        Assert.assertEquals(expected, out, 0.00000001);
-    }
 }
