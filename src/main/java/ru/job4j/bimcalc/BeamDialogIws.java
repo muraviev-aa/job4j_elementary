@@ -42,6 +42,14 @@ public class BeamDialogIws implements Bimoment, SectionI {
      */
     private double iw;
     /**
+     * Момент инерции [см4]
+     */
+    private double ix;
+    /**
+     * Момент сопротивления сечения [см3]
+     */
+    private double wx;
+    /**
      * Момент инерции при чистом кручении [см4]
      */
     private double it;
@@ -73,6 +81,12 @@ public class BeamDialogIws implements Bimoment, SectionI {
         return roundTwo((1.29 / 3) * (2 * b * Math.pow(tf, 3) + (h - 2 * tf) * Math.pow(tw, 3)));
     }
 
+    double calcMomentOfResistance(double h, double b, double tw, double tf) {
+        ix = (tw * Math.pow((h - 2 * tf), 3)) / 12 + 2 * b * tf * Math.pow((0.5 * (h - tf)), 2);
+        wx = roundTwo(ix / (0.5 * h));
+        return wx;
+    }
+
     public static void main(String[] args) {
         BeamDialogIws beamDialogIws = new BeamDialogIws();
         System.out.println("w: " + beamDialogIws.calcSectorialCoordinateW1(20, 29.1));
@@ -80,5 +94,6 @@ public class BeamDialogIws implements Bimoment, SectionI {
         System.out.println("It: " + beamDialogIws.calcMomentInertiaTorsion(20, 1.1, 29.1, 0.8));
         System.out.println("k: " + beamDialogIws.calcBendingTorsionalCharacteristic(28.82, 287466.67));
         System.out.println("Bmax: " + beamDialogIws.calcBimomentMax1(2100, 8, 0.0062006, 600));
+        System.out.println("Wx: " + beamDialogIws.calcMomentOfResistance(29.1, 20, 0.8, 1.1));
     }
 }
