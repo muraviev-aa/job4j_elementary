@@ -138,7 +138,7 @@ public class BeamDialogIwa implements Bimoment, SectionI {
         return aycg;
     }
 
-    double calcMomentOfResistance1(double tf1, double tf2, double tw, double h, double b, double d, double aycg) {
+    public double calcMomentOfResistance1(double tf1, double tf2, double tw, double h, double b, double d, double aycg) {
         double s1 = tf1 * b;
         double s2 = tf2 * d;
         double s3 = tw * (h - tf1 - tf2);
