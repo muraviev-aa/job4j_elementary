@@ -142,15 +142,14 @@ public class BeamDialogIwa implements Bimoment, SectionI {
         double s1 = tf1 * b;
         double s2 = tf2 * d;
         double s3 = tw * (h - tf1 - tf2);
-        double l = 0.5 * (h - tf1 - tf2) - aycg + 0.5 * tf1;
+        double l1 = 0.5 * (h - tf1 - tf2) - aycg + 0.5 * tf1;
         double ix1 = ((b * Math.pow(tf1, 3)) / 12)
                 + s1 * Math.pow(aycg, 2);
         double ix2 = ((d * Math.pow(tf2, 3)) / 12)
                 + s2 * Math.pow(h - 0.5 * (tf1 + tf2) - aycg, 2);
         double ix3 = ((tw * Math.pow(h - tf1 - tf2, 3)) / 12)
-                + s3 * Math.pow(l, 2);
+                + s3 * Math.pow(l1, 2);
         ix = ix1 + ix2 + ix3;
-        System.out.println("Ix: " + ix);
         wx1 = roundTwo(ix / (aycg + 0.5 * tf1));
         return wx1;
     }
@@ -159,13 +158,13 @@ public class BeamDialogIwa implements Bimoment, SectionI {
         double s1 = tf1 * b;
         double s2 = tf2 * d;
         double s3 = tw * (h - tf1 - tf2);
-        double l = 0.5 * (h - tf1 - tf2) - aycg + 0.5 * tf1;
+        double l2 = 0.5 * (h - tf1 - tf2) - aycg + 0.5 * tf1;
         double ix1 = ((b * Math.pow(tf1, 3)) / 12)
                 + s1 * Math.pow(aycg, 2);
         double ix2 = ((d * Math.pow(tf2, 3)) / 12)
                 + s2 * Math.pow(h - 0.5 * (tf1 + tf2) - aycg, 2);
         double ix3 = ((tw * Math.pow(h - tf1 - tf2, 3)) / 12)
-                + s3 * Math.pow(l, 2);
+                + s3 * Math.pow(l2, 2);
         ix = ix1 + ix2 + ix3;
         wx2 = roundTwo(ix / (h - (aycg + 0.5 * tf1)));
         return wx2;
