@@ -18,7 +18,7 @@ public interface SectionI extends Bimoment {
      * Нормальные напряжения для двутавра с одной осью симметрии  от бимомента
      */
     default double normalStressBimomentAsimPoint1(double bmax, double w1, double iw) {
-        return roundWhole((-1) * (bmax * w1) / iw);
+        return roundWhole((-1) * normalStressBimomentAsimPoint2(bmax, w1, iw));
     }
 
     default double normalStressBimomentAsimPoint2(double bmax, double w1, double iw) {
@@ -30,7 +30,7 @@ public interface SectionI extends Bimoment {
     }
 
     default double normalStressBimomentAsimPoint4(double bmax, double w2, double iw) {
-        return roundWhole((-1) * (bmax * w2) / iw);
+        return roundWhole((-1) * normalStressBimomentAsimPoint3(bmax, w2, iw));
     }
 
     /**
