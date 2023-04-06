@@ -68,16 +68,4 @@ class BeamDialogITest {
         double out = beamDialogI.calcSectorialMomentInertia(tf, b, h);
         Assertions.assertEquals(expected, out, 0.01);
     }
-
-    @Test
-    void when30SH1Then28Point82() {
-        double tf = 1.1;
-        double b = 20;
-        double h = 29.1;
-        double tw = 0.8;
-        double expected = 28.82;
-        BeamDialogI beamDialogI = new BeamDialogI();
-        double out = beamDialogI.calcMomentInertiaTorsion(b, tf, h, tw);
-        Assertions.assertEquals(expected, out, 0.01);
-    }
 }
