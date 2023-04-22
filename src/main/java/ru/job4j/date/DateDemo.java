@@ -12,6 +12,8 @@ public class DateDemo {
          * hh - час; mm - минута; ss - секунда; a - половина суток (AM или PM)
          * zzz - временная зона */
         SimpleDateFormat formatter = new SimpleDateFormat("EEEE yyyy.MM.dd 'at' hh:mm:ss a zzz");
+        SimpleDateFormat formatter1 = new SimpleDateFormat("dd.MM.yyyy hh:mm");
         System.out.println("It is " + formatter.format(dNow));
+        System.out.println(formatter1.format(dNow));
     }
 }
