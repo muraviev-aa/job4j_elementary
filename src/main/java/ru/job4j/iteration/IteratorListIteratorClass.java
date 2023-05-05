@@ -3,7 +3,7 @@ package ru.job4j.iteration;
 import java.util.*;
 
 public class IteratorListIteratorClass {
-    public static <T, C> void IterateUsingIterator(List<T> list, Class<C> iteratorClass) {
+    public static <T, C> void iterateUsingIterator(List<T> list, Class<C> iteratorClass) {
         if (iteratorClass.getSimpleName().equals("ListIterator")) {
             ListIterator<T> lItr = list.listIterator();
             while (lItr.hasNext()) {
@@ -19,7 +19,7 @@ public class IteratorListIteratorClass {
 
     public static void main(String[] args) {
         List<String> list = Arrays.asList("Раз", "Два", "Три", "Четыре", "Пять");
-        IterateUsingIterator(list, Iterator.class);
-        IterateUsingIterator(list, ListIterator.class);
+        iterateUsingIterator(list, Iterator.class);
+        iterateUsingIterator(list, ListIterator.class);
     }
 }
