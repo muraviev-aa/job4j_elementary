@@ -15,7 +15,7 @@ public class UsingForAndForEach {
         /**
          * С помощью цикла for-each
          */
-        for (String s: list){
+        for (String s: list) {
             System.out.println(s);
         }
     }
