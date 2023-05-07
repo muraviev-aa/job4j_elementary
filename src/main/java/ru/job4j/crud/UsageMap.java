@@ -4,13 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UsageMap {
-    public static void part1() {
-        HashMap<String, String> map = new HashMap<>();
-        /**
-         * Вставляем данные в карту с помощью метода put()
-         */
-        map.put("muraviev-aa@yandex.ru", "Aleksey Muraviev");
-        map.put("parsentev@yandex.ru", "Petr Arsentev");
+    public static void hashMapPart1(HashMap<String, String> map) {
         System.out.println(map.toString());
 
         System.out.println("------------------");
@@ -34,17 +28,7 @@ public class UsageMap {
         System.out.println("------------------");
     }
 
-    public static void part2() {
-        HashMap<String, String> map = new HashMap<>();
-        /**
-         * Вставляем данные в карту с помощью метода put()
-         */
-        map.put("muraviev-aa@yandex.ru", "Aleksey Muraviev");
-        map.put("parsentev@yandex.ru", "Petr Arsentev");
-        /**
-         * Если в Map уже есть такой key, то ячейка value будет заменена на новое значение
-         */
-        map.put("parsentev@yandex.ru", "Petr Arsentev Sergeevich");
+    public static void hashMapPart2(HashMap<String, String> map) {
         for (String key : map.keySet()) {
             String value = map.get(key);
             System.out.println(key + " = " + value);
@@ -60,11 +44,22 @@ public class UsageMap {
             String value = map.get(key);
             System.out.println(key + " = " + value);
         }
-
     }
 
     public static void main(String[] args) {
-        part1();
-        part2();
+        HashMap<String, String> map = new HashMap<>();
+        /**
+         * Вставляем данные в карту с помощью метода put()
+         */
+        map.put("muraviev-aa@yandex.ru", "Aleksey Muraviev");
+        map.put("parsentev@yandex.ru", "Petr Arsentev");
+
+        hashMapPart1(map);
+
+        /**
+         * Если в Map уже есть такой key, то ячейка value будет заменена на новое значение
+         */
+        map.put("parsentev@yandex.ru", "Petr Arsentev Sergeevich");
+        hashMapPart2(map);
     }
 }
