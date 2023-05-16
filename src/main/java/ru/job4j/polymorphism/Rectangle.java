@@ -14,4 +14,9 @@ public class Rectangle extends Shape {
         area = length * width;
         return area;
     }
+
+    @Override
+    public void draw() {
+        System.out.println("Я рисую прямоугольник");
+    }
 }

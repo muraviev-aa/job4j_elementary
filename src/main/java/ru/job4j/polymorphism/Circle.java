@@ -12,4 +12,9 @@ public class Circle extends Shape {
         area = 3.14 * radius * radius;
         return area;
     }
+
+    @Override
+    public void draw() {
+        System.out.println("Я рисую круг");
+    }
 }
