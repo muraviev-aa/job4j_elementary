@@ -16,9 +16,10 @@ public class ArrayDemo {
         return numbers;
     }
 
-    public static void print(double[] factorLongTime, String[] forceLongTime,
+    public static void print(String[] forceConstant, double[] factorLongTime, String[] forceLongTime,
                       double[] factorShortTime, String[] forceShortTime) {
-        System.out.println("Pd" + " + " + factorLongTime[0] + " * " + forceLongTime[0] + " + "
+        System.out.println(forceConstant[0] + " + "
+                + factorLongTime[0] + " * " + forceLongTime[0] + " + "
                 + factorLongTime[1] + " * " + forceLongTime[1] + " + "
                 + factorLongTime[2] + " * " + forceLongTime[2] + " + "
                 + factorLongTime[3] + " * " + forceLongTime[3] + " + "
@@ -48,22 +49,22 @@ public class ArrayDemo {
         System.out.println("Сочетание нагрузок:");
         shiftArr(factorLongTime, 0);
         shiftArr(factorShortTime, 0);
-        print(factorLongTime, forceLongTime, factorShortTime, forceShortTime);
+        print(forceConstant, factorLongTime, forceLongTime, factorShortTime, forceShortTime);
 
         shiftArr(factorLongTime, 4);
         shiftArr(factorShortTime, 4);
-        print(factorLongTime, forceLongTime, factorShortTime, forceShortTime);
+        print(forceConstant, factorLongTime, forceLongTime, factorShortTime, forceShortTime);
 
         shiftArr(factorLongTime, 4);
         shiftArr(factorShortTime, 4);
-        print(factorLongTime, forceLongTime, factorShortTime, forceShortTime);
+        print(forceConstant, factorLongTime, forceLongTime, factorShortTime, forceShortTime);
 
         shiftArr(factorLongTime, 4);
         shiftArr(factorShortTime, 4);
-        print(factorLongTime, forceLongTime, factorShortTime, forceShortTime);
+        print(forceConstant, factorLongTime, forceLongTime, factorShortTime, forceShortTime);
 
         shiftArr(factorLongTime, 4);
         shiftArr(factorShortTime, 4);
-        print(factorLongTime, forceLongTime, factorShortTime, forceShortTime);
+        print(forceConstant, factorLongTime, forceLongTime, factorShortTime, forceShortTime);
     }
 }
