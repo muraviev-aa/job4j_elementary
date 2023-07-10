@@ -21,28 +21,23 @@ public class ArrayDemo {
         System.out.println(forceConstant[0] + " + "
                 + factorLongTime[0] + " * " + forceLongTime[0] + " + "
                 + factorLongTime[1] + " * " + forceLongTime[1] + " + "
-                + factorLongTime[2] + " * " + forceLongTime[2] + " + "
-                + factorLongTime[3] + " * " + forceLongTime[3] + " + "
-                + factorLongTime[4] + " * " + forceLongTime[4] + " + "
                 + factorShortTime[0] + " * " + forceShortTime[0] + " + "
                 + factorShortTime[1] + " * " + forceShortTime[1] + " + "
-                + factorShortTime[2] + " * " + forceShortTime[2] + " + "
-                + factorShortTime[3] + " * " + forceShortTime[3] + " + "
-                + factorShortTime[4] + " * " + forceShortTime[4]);
+                + factorShortTime[2] + " * " + forceShortTime[2]);
     }
 
     public static void main(String[] args) {
         String[] forceConstant = {"Pd"};
         System.out.println("Постоянная нагрузка: " + Arrays.toString(forceConstant));
 
-        String[] forceLongTime = {"Pl1", "Pl2", "Pl3", "Pl4", "Pl5"};
+        String[] forceLongTime = {"Pl1", "Pl2"};
         System.out.println("Длительные нагрузки: " + Arrays.toString(forceLongTime));
-        double[] factorLongTime = {1.0, 0.95, 0.95, 0.95, 0.95};
+        double[] factorLongTime = {1.0, 0.95};
         System.out.println("Коэффициенты сочетаний длительных нагрузок: " + Arrays.toString(factorLongTime) + "\n");
 
-        String[] forceShortTime = {"Pt1", "Pt2", "Pt3", "Pt4", "Pt5"};
+        String[] forceShortTime = {"Pt1", "Pt2", "Pt3"};
         System.out.println("Кратковременные нагрузки: " + Arrays.toString(forceShortTime));
-        double[] factorShortTime = {1.0, 0.9, 0.7, 0.7, 0.7};
+        double[] factorShortTime = {1.0, 0.9, 0.7};
         System.out.println("Коэффициенты сочетаний кратковременных нагрузок: " + Arrays.toString(factorShortTime));
 
         System.out.println("--------------------------------------");
@@ -50,21 +45,21 @@ public class ArrayDemo {
         shiftArr(factorLongTime, 0);
         shiftArr(factorShortTime, 0);
         print(forceConstant, factorLongTime, forceLongTime, factorShortTime, forceShortTime);
-
-        shiftArr(factorLongTime, 4);
-        shiftArr(factorShortTime, 4);
+        shiftArr(factorLongTime, 0);
+        shiftArr(factorShortTime, 2);
+        print(forceConstant, factorLongTime, forceLongTime, factorShortTime, forceShortTime);
+        shiftArr(factorLongTime, 0);
+        shiftArr(factorShortTime, 2);
         print(forceConstant, factorLongTime, forceLongTime, factorShortTime, forceShortTime);
 
-        shiftArr(factorLongTime, 4);
-        shiftArr(factorShortTime, 4);
+        shiftArr(factorLongTime, 1);
+        shiftArr(factorShortTime, 2);
         print(forceConstant, factorLongTime, forceLongTime, factorShortTime, forceShortTime);
-
-        shiftArr(factorLongTime, 4);
-        shiftArr(factorShortTime, 4);
+        shiftArr(factorLongTime, 0);
+        shiftArr(factorShortTime, 2);
         print(forceConstant, factorLongTime, forceLongTime, factorShortTime, forceShortTime);
-
-        shiftArr(factorLongTime, 4);
-        shiftArr(factorShortTime, 4);
+        shiftArr(factorLongTime, 0);
+        shiftArr(factorShortTime, 2);
         print(forceConstant, factorLongTime, forceLongTime, factorShortTime, forceShortTime);
     }
 }
